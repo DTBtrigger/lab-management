@@ -15,3 +15,42 @@
 - 点击任何一个小方块，弹出模态框，包含所有课程信息。可选择指定周
 - 重新预约，不更新，而是直接移除再重新创建（单独在某一个组件里移除？）
 - 自己的课可以用别的颜色突出显示
+
+**12.22**  
+在测试`login.http`时出了问题，返回的data对象除了`account`字段均为空：
+```json
+{
+  "code": 200,
+  "message": null,
+  "data": {
+    "id": null,
+    "name": null,
+    "account": "1234567890",
+    "role": null,
+    "telephone": null,
+    "createTime": null,
+    "updateTime": null
+  }
+}
+```
+原因：没有在`application.yml`中添加如下配置：
+```yml
+  jackson:
+    default-property-inclusion: non_null
+```
+添加之后成功读出：
+```json
+{
+  "code": 200,
+  "data": {
+    "id": "01JFMDR2KH87DXM7V3C1PW1YEX",
+    "name": "杨过",
+    "account": "1234567890",
+    "role": "ikp1",
+    "telephone": "12345678981",
+    "createTime": "2024-12-21T18:53:52",
+    "updateTime": "2024-12-21T18:53:52"
+  }
+}
+```
+但是我不知道为什么

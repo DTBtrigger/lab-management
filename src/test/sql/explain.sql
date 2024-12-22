@@ -3,7 +3,7 @@ SHOW INDEX FROM appointment;
 explain
 select *
 from lab l left join appointment a
-    on  l.id = a.lab_id and a.semester='2024' and a.week=1  and a.dayofweek=2 and a.section=3
+    on  l.id = a.lab_id and a.semester='24-1' and a.week=1  and a.dayofweek=2 and a.section=3
 where a.lab_id is null and l.state=1;
 
 explain
