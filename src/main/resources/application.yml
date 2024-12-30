@@ -5,7 +5,7 @@ spring:
     username: ${mysql-account}
     password: ${mysql-account}
     hikari:
-      maximum-pool-size: 5
+      maximum-pool-size: 1
   sql:
     init:
       mode: always
@@ -18,3 +18,6 @@ logging:
     org.example: debug
   pattern:
     console: '%-5level %C.%M[%line] - %msg%n'
+
+my:
+  secretkey: 8dh2j1

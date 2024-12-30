@@ -16,8 +16,14 @@ public class ResultVO {
     private String message; // 操作出错，返回出错信息
     private Object data;   //操作成功，返回200业务码和具体信息，因为不知道什么类型，所以使用object
 
-
-    //操作成功，返回
+//    操作成功，返回空，无需每次创建相同的对象，因此创建单一对象，然后引用即可
+    private static final ResultVO EMPTY = ResultVO.builder()
+            .code(200)
+            .build();
+    public static ResultVO ok() {
+        return EMPTY;
+    }
+    //操作成功，返回具体信息
     public static ResultVO succuss(Object data) {
         return ResultVO.builder()
                 .code(200)
@@ -33,9 +39,9 @@ public class ResultVO {
                 .build();
     }
 
-    public static ResultVO error(int code, String message) {
+    public static ResultVO error(int number, String message) {
         return ResultVO.builder()
-                .code(code)
+                .code(number)
                 .message(message)
                 .build();
     }

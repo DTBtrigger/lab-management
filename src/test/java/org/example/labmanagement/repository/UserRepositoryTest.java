@@ -18,11 +18,11 @@ class UserRepositoryTest {
     void save() {
         User user = User.builder()
 //                .id("1233445")
-                .name("杨过")
-                .account("1234567890")
+                .name("张三")
+                .account("1234867890")
                 .password("1234")
                 .role(User.TEACHER)
-                .telephone("12345678981")
+                .telephone("12745678981")
                 .build();
         userRepository.save(user);
     }

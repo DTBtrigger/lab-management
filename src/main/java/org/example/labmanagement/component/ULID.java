@@ -15,7 +15,7 @@ import java.util.Objects;
 import java.util.Optional;
 import java.util.Random;
 
-//@Component
+
 @Configuration
 @EnableJdbcAuditing
 public class ULID

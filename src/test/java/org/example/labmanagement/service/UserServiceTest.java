@@ -6,6 +6,7 @@ import org.example.labmanagement.repository.UserRepository;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.security.crypto.password.PasswordEncoder;
 
 import static org.junit.jupiter.api.Assertions.*;
 @Slf4j
@@ -13,17 +14,19 @@ import static org.junit.jupiter.api.Assertions.*;
 class UserServiceTest {
     @Autowired
     private UserService userService;
+    @Autowired
+    private PasswordEncoder passwordEncoder;
 
     @Test
     public void addUser() {
 
         User user = User.builder()
 //                .id("1233445")
-                .name("欧阳修")
-                .account("1211367654")
-                .password("1232344")
-                .role(User.TEACHER)
-                .telephone("14222622231")
+                .name("郭靖")
+                .account("1271367654")
+                .password(passwordEncoder.encode("1232344"))
+                .role(User.ADMIN)
+                .telephone("14222677731")
                 .build();
         userService.addUser(user);
         log.debug("添加成功");

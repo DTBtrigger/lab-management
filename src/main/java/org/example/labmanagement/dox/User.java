@@ -25,7 +25,7 @@ public class User {
     private String id;
     private String name;
     private String account;
-    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY) // 序列化时，忽略此属性
     private String password;
     private String role;
     private String telephone;

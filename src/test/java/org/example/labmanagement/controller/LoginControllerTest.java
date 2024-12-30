@@ -2,6 +2,7 @@ package org.example.labmanagement.controller;
 
 import lombok.extern.slf4j.Slf4j;
 import org.example.labmanagement.dox.User;
+import org.example.labmanagement.dto.LabCountDTO;
 import org.example.labmanagement.service.UserService;
 import org.example.labmanagement.vo.ResultVO;
 import org.junit.jupiter.api.Test;
@@ -21,10 +22,11 @@ class LoginControllerTest {
 
     @Test
     public void loginTest() {
+//        LabCountDTO l = loginController.login();
         User user = userService.findUserByAccount("1211367654");
-        ResultVO r = loginController.login(user);
+//        ResultVO r = loginController.login(user);
         log.debug(user.toString());
-        log.debug(r.toString());
+//        log.debug(r.toString());
 
     }
 

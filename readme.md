@@ -54,3 +54,24 @@
 }
 ```
 但是我不知道为什么
+
+**12.30**  
+写完了一个简单的查看实验室的admincontroller的功能：
+```java
+    @GetMapping("labs")
+    public ResultVO findAllLabs() {
+        return ResultVO.succuss(adminService.findAllLabs());
+    }
+```
+测试：
+```http request
+###
+GET http://localhost:8080/api/admin/labs
+token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoic2ZlMyIsInVpZCI6IjAxSkdBUDhFNVNGVlRQWURaUTdGS0FFRUdEIiwiaWF0IjoxNzM1NTI1Nzk0LCJleHAiOjE3MzU2MTIxOTR9.elTK-aKfFxPKMT5IBjIktF1W8pKaCxbgsOvzNLfycgI
+
+```
+总是返回：
+```json
+"No static resource api/admin/labs."
+```
+很简单的实现，看了几遍没有错，其他相同类型的功能也没有错。重启项目也没用。最后清除缓存，成功。

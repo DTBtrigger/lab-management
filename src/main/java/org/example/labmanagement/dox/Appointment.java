@@ -1,6 +1,5 @@
 package org.example.labmanagement.dox;
 
-
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -12,15 +11,17 @@ import org.springframework.data.annotation.Id;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class Course {
+public class Appointment {
     @Id
     @CreatedBy
     private String id;
-    private String name;
-    private int  quantity;
+    private String teacher;
+    private String course;
     private String semester;
-    private String clazz;
-    private String type;
-    private String teacherId;
-    private int experimentHour;
+    private String nature;
+    private String labId;
+    private String labName;
+    private int week;
+    private int dayofweek;
+    private int section;
 }
