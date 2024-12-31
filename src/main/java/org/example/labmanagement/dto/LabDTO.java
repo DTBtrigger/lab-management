@@ -10,9 +10,10 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class LabDTO {
+    private String id;
     private String name;
     private int state;
     private int quantity;
     private String description;
-    private String managerName;
+    private String manager;
 }

@@ -24,7 +24,12 @@ public interface LabRepository extends CrudRepository<Lab,String> {
     List<EnableEquipmentCount> countEnableEquipment();
 
     @Query("""
-            select name,state,quantity,description,(lab.manager ->> '$.name') as manager_name from lab;
+            select id,name,state,quantity,description,manager from lab;
 """)
     List<LabDTO> findAllLabs();
+
+//    @Query("""
+//
+//""")
+
 }

@@ -29,11 +29,12 @@ public class AdminController {
         return ResultVO.succuss(labState);
     }
 
+    @Operation(summary = "查看所有公告")
     @GetMapping("news")
     public ResultVO findAllNews() {
         return ResultVO.succuss(adminService.findAllNews());
     }
-
+    @Operation(summary = "查看所有实验室信息")
     @GetMapping("labs")
     public ResultVO findAllLabs() {
         return ResultVO.succuss(adminService.findAllLabs());

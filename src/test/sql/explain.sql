@@ -54,5 +54,17 @@ select dayofweek,count(distinct lab_id) from appointment where week=2 group by d
 explain
 select name,enable_equipment, (quantity-lab.enable_equipment) as unable_equipment from lab;
 select title,content,author,update_time from news;
-select name,state,quantity,description,(lab.manager ->> '$.name') as manager_name
-from lab;
+select name,state,quantity,description,(lab.manager ->> '$.name') as manager_name from lab;
+explain
+select *
+from appointment a where a.teacher ->> '$.id'='01JFXVYSMCG63TYK72DP1GBT25';
+select *
+    from appointment a,course c
+        where a.semester='24-1' ;
+explain
+select * from `2022222994`.appointment a
+         where semester='24-1' and a.teacher ->> '$.id'='01JFXVYSMCG63TYK72DP1GBT25'
+
+explain
+select *
+from appointment where lab_id='5f6a4e8d6c40437a8f22c8c9' and semester='24-1';

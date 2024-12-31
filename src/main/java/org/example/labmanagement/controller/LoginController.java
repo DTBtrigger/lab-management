@@ -34,9 +34,10 @@ public class LoginController {
         } else if (!passwordEncoder.matches(user.getPassword(),userR.getPassword())) {
             return ResultVO.error(Code.LOGIN_ERROR);
         }else {
-            String token = jwtComponent.encode(Map.of("uid",userR.getId(),"role",userR.getRole()));
+            String token = jwtComponent.encode(Map.of("uid",userR.getId(),"role",userR.getRole(),"account",userR.getAccount()));
             response.addHeader("token",token);
             response.addHeader("role",userR.getRole());
+            response.addHeader("account",userR.getAccount());
             return ResultVO.succuss(userR);
         }
     }

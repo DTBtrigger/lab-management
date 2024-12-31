@@ -32,4 +32,11 @@ class NewsRepositoryTest {
             log.debug(n.toString());
         }
     }
+
+    @Test
+    void delete() {
+        News news =  newsRepository.findById("01JGAMVYHYGJB2Q4B4WQZG6JSV")
+                .orElse(null);
+
+    }
 }

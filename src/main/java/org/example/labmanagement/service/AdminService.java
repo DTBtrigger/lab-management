@@ -26,15 +26,6 @@ public class AdminService {
         userRepository.save(user);
     }
 
-    @Transactional
-    public List<LabCountDTO> countLabByState() {
-       return labRepository.countLabByState();
-    }
-
-    @Transactional
-    public List<LabCountByDayofweekDTO> countLabByDayofweek(int week) {
-        return appointmentRepository.countLabByDayofweek(week);
-    }
 
     @Transactional
     public Map<String, List<?>> getLabState(int week) {
