@@ -19,7 +19,8 @@ import static org.junit.jupiter.api.Assertions.*;
 class AdminServiceTest {
     @Autowired
     AdminService adminService;
-
+    @Autowired
+    UserService userService;
     @Test
     void  adduser() {
         User user = User.builder()
@@ -33,19 +34,31 @@ class AdminServiceTest {
     }
 
     @Test
-    void countLabByState() {
-
-        for (LabCountDTO l : adminService.countLabByState()){
-            log.debug("{}",l.toString());
-        }
+    void addSingleUser() {
+        User user = User.builder()
+                .name("黄蓉")
+                .account("2038772222")
+                .password("123434")
+                .role(User.TEACHER)
+                .telephone("12333999999")
+                .build();
+        adminService.addSingleUser(user);
     }
 
-    @Test
-    void countLabByDayofweek() {
-        for (LabCountByDayofweekDTO l : adminService.countLabByDayofweek(2)) {
-            log.debug("{}",l.toString());
-        }
-    }
+//    @Test
+//    void countLabByState() {
+//
+//        for (LabCountDTO l : adminService.countLabByState()){
+//            log.debug("{}",l.toString());
+//        }
+//    }
+//
+//    @Test
+//    void countLabByDayofweek() {
+//        for (LabCountByDayofweekDTO l : adminService.countLabByDayofweek(2)) {
+//            log.debug("{}",l.toString());
+//        }
+//    }
 
     @Test
     void getLabState() {
@@ -62,6 +75,19 @@ class AdminServiceTest {
         for (LabDTO l : adminService.findAllLabs()) {
             log.debug(l.toString());
         }
+    }
+
+    @Test
+    void deleteNews() {
+        List<String> list = List.of("01JGAMXXV8DSJR0ZA4YQABYWD4",
+                "01JGG84Q604A0FD1NF5B2JPXPE");
+        adminService.deleteNews(list);
+    }
+
+    @Test
+    void resetUserPassword() {
+
+        adminService.resetPassword("01JFXVYSMCG63TYK72DP1GBT25","1234567890");
     }
 
 }

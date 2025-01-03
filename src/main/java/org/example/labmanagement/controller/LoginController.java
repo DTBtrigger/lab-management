@@ -28,7 +28,9 @@ public class LoginController {
     @PostMapping("login")
     public ResultVO login(@RequestBody User user,HttpServletResponse response) {
         User userR = userService.findUserByAccount(user.getAccount());
-        log.debug("{}{}",user.getAccount(),user.getPassword());
+        log.debug(userR.getPassword());
+        log.debug("{}",user.getAccount());
+        log.debug(user.getPassword());
         if (userR == null) {
             return ResultVO.error(Code.LOGIN_NOTEXIST);
         } else if (!passwordEncoder.matches(user.getPassword(),userR.getPassword())) {

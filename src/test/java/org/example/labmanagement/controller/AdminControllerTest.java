@@ -19,7 +19,7 @@ class AdminControllerTest {
 
     @Test
     void count() {
-        ResultVO resultVO = adminController.accountLabByState();
+        ResultVO resultVO = adminController.showLabState(3);
         log.debug(resultVO.toString());
 
     }

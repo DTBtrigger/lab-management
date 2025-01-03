@@ -7,7 +7,7 @@ token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiIwMUpGWFZZU01DRzYzVFlLNzJE
 
 ###
 POST http://localhost:8080/api/1234567890/appointments
-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiIwMUpGWFZZU01DRzYzVFlLNzJEUDFHQlQyNSIsInJvbGUiOiJpa3AxIiwiaWF0IjoxNzM1NjEzNjM2LCJleHAiOjE3MzU3MDAwMzZ9.IXQjR_eRNRWxqMVIyImXq_hT5zu9sF7aLQtJ6dmgMhU
+token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2NvdW50IjoiMTIzNDU2Nzg5MCIsInVpZCI6IjAxSkZYVllTTUNHNjNUWUs3MkRQMUdCVDI1Iiwicm9sZSI6ImlrcDEiLCJpYXQiOjE3MzU4ODMwOTUsImV4cCI6MTczNTk2OTQ5NX0.WG91084H6biCwES28dgKVAMjUp93pp89dS3XPo9sYAI
 Content-Type: application/json
 
 {
@@ -31,3 +31,14 @@ Content-Type: application/json
   "labId": "5f6a4e8d6c40437a8f22c8c9",
   "semester": "24-1"
 }
+
+###
+PATCH http://localhost:8080/api/1234567890/settings/password
+token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2NvdW50IjoiMTIzNDU2Nzg5MCIsInVpZCI6IjAxSkZYVllTTUNHNjNUWUs3MkRQMUdCVDI1Iiwicm9sZSI6ImlrcDEiLCJpYXQiOjE3MzU4Njc0OTksImV4cCI6MTczNTk1Mzg5OX0.Zugzd0OzHseJgd-OkQpNtzWHos987DVoKDfzhTNwob0
+Content-Type: application/json
+
+123456
+
+###
+GET http://localhost:8080/api/teacher/currentappointment/24-1
+token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2NvdW50IjoiMTIzNDU2Nzg5MCIsInVpZCI6IjAxSkZYVllTTUNHNjNUWUs3MkRQMUdCVDI1Iiwicm9sZSI6ImlrcDEiLCJpYXQiOjE3MzU4Njc0OTksImV4cCI6MTczNTk1Mzg5OX0.Zugzd0OzHseJgd-OkQpNtzWHos987DVoKDfzhTNwob0

@@ -68,3 +68,17 @@ select * from `2022222994`.appointment a
 explain
 select *
 from appointment where lab_id='5f6a4e8d6c40437a8f22c8c9' and semester='24-1';
+update user set password='2222' where id='01JGAKHA4H0TMVZKA20NYMZGYV';
+
+SELECT
+    a.*,c.*
+FROM
+    appointment a
+        JOIN
+    course c ON a.teacher ->> '$.id' = c.teacher_id AND a.course ->> '$.id' = c.id
+WHERE
+    a.teacher ->> '$.id' = '01JFXVYSMCG63TYK72DP1GBT25' and a.semester= '24-1';
+
+## 这里没加上学期，有bug
+select dayofweek,count(distinct lab_id)  as quantity from appointment where week=3 group by dayofweek;
+

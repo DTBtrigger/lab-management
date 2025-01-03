@@ -18,9 +18,9 @@ class NewsRepositoryTest {
     @Test
     void save() {
         News news = News.builder()
-                .title("908维修")
-                .content("908要维修，预期维修6天")
-                .author("麻子")
+                .title("904维修")
+                .content("904要维修，预期维修7天")
+                .author("赵子")
                 .build();
         newsRepository.save(news);
     }
@@ -35,8 +35,7 @@ class NewsRepositoryTest {
 
     @Test
     void delete() {
-        News news =  newsRepository.findById("01JGAMVYHYGJB2Q4B4WQZG6JSV")
-                .orElse(null);
-
+        newsRepository.deleteById("01JGAMVYHYGJB2Q4B4WQZG6JSV");
+        log.debug("删除成功");
     }
 }

@@ -3,12 +3,52 @@ token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoic2ZlMyIsInVpZCI6IjAxSkdB
 
 ###
 GET http://localhost:8080/api/admin/labstate
-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiaWtwMSIsInVpZCI6IjAxSkZYVllTTUNHNjNUWUs3MkRQMUdCVDI1IiwiaWF0IjoxNzM1NTI1ODk2LCJleHAiOjE3MzU2MTIyOTZ9.L3IAAxazm8v3AROr7R98-NRrs8sEtXVs8jUxrxoB9mg
+token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiIwMUpHQVA4RTVTRlZUUFlEWlE3RktBRUVHRCIsImFjY291bnQiOiIxMjcxMzY3NjU0Iiwicm9sZSI6InNmZTMiLCJpYXQiOjE3MzU4MDkwNzQsImV4cCI6MTczNTg5NTQ3NH0.F2UNbyvsmep6XpwTYJNUlkl2go_EkGYYlf7zKen-xTI
+Content-Type: application/json
+
+3
 
 ###
 GET http://localhost:8080/api/admin/labs
-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoic2ZlMyIsInVpZCI6IjAxSkdBUDhFNVNGVlRQWURaUTdGS0FFRUdEIiwiaWF0IjoxNzM1NTI1Nzk0LCJleHAiOjE3MzU2MTIxOTR9.elTK-aKfFxPKMT5IBjIktF1W8pKaCxbgsOvzNLfycgI
+token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiIwMUpHQVA4RTVTRlZUUFlEWlE3RktBRUVHRCIsImFjY291bnQiOiIxMjcxMzY3NjU0Iiwicm9sZSI6InNmZTMiLCJpYXQiOjE3MzU4MDkwNzQsImV4cCI6MTczNTg5NTQ3NH0.F2UNbyvsmep6XpwTYJNUlkl2go_EkGYYlf7zKen-xTI
 
 ###
 GET http://localhost:8080/api/admin/news
-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoic2ZlMyIsInVpZCI6IjAxSkdBUDhFNVNGVlRQWURaUTdGS0FFRUdEIiwiaWF0IjoxNzM1NTI1Nzk0LCJleHAiOjE3MzU2MTIxOTR9.elTK-aKfFxPKMT5IBjIktF1W8pKaCxbgsOvzNLfycgI
+token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2NvdW50IjoiMTI3MTM2NzY1NCIsInJvbGUiOiJzZmUzIiwidWlkIjoiMDFKR0FQOEU1U0ZWVFBZRFpRN0ZLQUVFR0QiLCJpYXQiOjE3MzU2NDA3ODIsImV4cCI6MTczNTcyNzE4Mn0.wsNpGqXFZbhdkScvbVwDTlnrQc0YVgTKbL63YRmeel8
+
+###
+GET http://localhost:8080/api/admin/users
+token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoic2ZlMyIsImFjY291bnQiOiIxMjcxMzY3NjU0IiwidWlkIjoiMDFKR0FQOEU1U0ZWVFBZRFpRN0ZLQUVFR0QiLCJpYXQiOjE3MzU4MjcyNzksImV4cCI6MTczNTkxMzY3OX0.TxSxrRtyIhHzILfWgKsuxlzzKXBguhYmDHJy2iiSD8Q
+
+###
+POST http://localhost:8080/api/admin/users
+token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoic2ZlMyIsImFjY291bnQiOiIxMjcxMzY3NjU0IiwidWlkIjoiMDFKR0FQOEU1U0ZWVFBZRFpRN0ZLQUVFR0QiLCJpYXQiOjE3MzU4MjcyNzksImV4cCI6MTczNTkxMzY3OX0.TxSxrRtyIhHzILfWgKsuxlzzKXBguhYmDHJy2iiSD8Q
+Content-Type: application/json
+
+{
+  "name": "又来了一堆bug",
+  "account": "1234567890",
+  "password": "454440",
+  "role": "ikp1",
+  "telephone": "1322772222"
+}
+
+###
+DELETE http://localhost:8080/api/admin/news
+token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2NvdW50IjoiMTI3MTM2NzY1NCIsInJvbGUiOiJzZmUzIiwidWlkIjoiMDFKR0FQOEU1U0ZWVFBZRFpRN0ZLQUVFR0QiLCJpYXQiOjE3MzU2NDA3ODIsImV4cCI6MTczNTcyNzE4Mn0.wsNpGqXFZbhdkScvbVwDTlnrQc0YVgTKbL63YRmeel8
+Content-Type: application/json
+
+[
+  "01JGGA0KP3BTMM3QVRZZPV400X",
+  "01JGGA107DAKJZ2NG9AFGRRFZV"
+]
+
+###
+PATCH http://localhost:8080/api/admin/users
+token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoic2ZlMyIsImFjY291bnQiOiIxMjcxMzY3NjU0IiwidWlkIjoiMDFKR0FQOEU1U0ZWVFBZRFpRN0ZLQUVFR0QiLCJpYXQiOjE3MzU4MjU2MjIsImV4cCI6MTczNTkxMjAyMn0.JNssf1SPa8esmLpT3CNWEPcZ4rm1Tjp3l8HjkFX0-cU
+Content-Type: application/json
+
+{
+  "id": "01JFXVYSMCG63TYK72DP1GBT25",
+  "account": "1234567890"
+}

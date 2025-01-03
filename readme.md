@@ -75,3 +75,22 @@ token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoic2ZlMyIsInVpZCI6IjAxSkdB
 "No static resource api/admin/labs."
 ```
 很简单的实现，看了几遍没有错，其他相同类型的功能也没有错。重启项目也没用。最后清除缓存，成功。
+
+**1.1**  
+粗心错误,记录一下避免再犯
+测试添加单个功能的时候总是报错：
+```json
+{
+  "code": 400,
+  "message": "rawPassword cannot be null"
+}
+```
+测试servic没问题，所以问题在controller上，发现是每带请求体注解`@RequestBody`
+```java
+ @PostMapping("users")
+    public ResultVO addSingleUser(@RequestBody User user) {
+        adminService.addSingleUser(user);
+        return ResultVO.succuss(user);
+    }
+```
+加上后解决

@@ -15,4 +15,5 @@ public interface NewsRepository extends CrudRepository<News,String> {
 """)
     List<NewsDTO> findAllNews();
 
+
 }

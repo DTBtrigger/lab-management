@@ -20,7 +20,7 @@ public class Course {
     private int  quantity;
     private String semester;
     private String clazz;
-    private String type;
+    private int type;
     private String teacherId;
     private int experimentHour;
 }

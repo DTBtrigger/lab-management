@@ -8,6 +8,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
+import java.util.List;
+
 import static org.junit.jupiter.api.Assertions.*;
 @Slf4j
 @SpringBootTest
@@ -36,5 +38,16 @@ class UserServiceTest {
     public void findUserByAccount() {
         User user = userService.findUserByAccount("1211367654");
         log.debug("{}",user.toString());
+    }
+
+    @Test
+    public void findAllUsers() {
+//        List<User> users =
+    }
+
+    @Test
+    public void changePasswordByUserId() {
+        String userId = "01JFXVYSMCG63TYK72DP1GBT25";
+        userService.changePassword(userId,"123456");
     }
 }
